@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lencina Crea LC · Videos y reels publicitarios con IA</title>
+<meta name="description" content="Portfolio de Lencina Crea LC: reels y videos cortos publicitarios creados con inteligencia artificial.">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050505;
+  --panel:#101010;
+  --line:#262320;
+  --text:#ece8e2;
+  --muted:#9b958c;
+  --gold:#b79f86;
+  --gold-hi:#d3bea5;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:300 17px/1.7 Montserrat,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
+img{max-width:100%;display:block}
+
+/* Navegación */
+header{position:sticky;top:0;z-index:10;background:rgba(5,5,5,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{max-width:1120px;margin:auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+nav img{width:40px;height:40px;border-radius:50%}
+nav ul{list-style:none;padding:0;display:flex;gap:28px;font-size:14px;letter-spacing:.12em}
+nav a{text-decoration:none;color:var(--muted);transition:color .2s}
+nav a:hover{color:var(--gold-hi)}
+
+/* Hero: el banner es la pieza principal */
+.hero img{width:100%;height:auto;animation:reveal 1.4s ease-out both}
+@keyframes reveal{from{opacity:0;transform:scale(1.015)}to{opacity:1;transform:none}}
+.hero-text{max-width:1120px;margin:auto;padding:56px 24px 24px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end}
+h1{font-weight:200;font-size:clamp(28px,4.2vw,46px);line-height:1.2;letter-spacing:.02em}
+.hero-text p{color:var(--muted)}
+.btn{display:inline-block;margin-top:22px;padding:13px 30px;border:1px solid var(--gold);color:var(--gold-hi);text-decoration:none;font-size:14px;letter-spacing:.14em;transition:background .25s,color .25s}
+.btn:hover{background:var(--gold);color:#050505}
+
+section{max-width:1120px;margin:auto;padding:88px 24px 24px}
+h2{font-weight:200;font-size:clamp(26px,3.4vw,38px);letter-spacing:.04em;margin-bottom:12px}
+h2::after{content:"";display:block;width:56px;height:1px;background:var(--gold);margin-top:18px}
+.lead{color:var(--muted);max-width:60ch;margin:22px 0 40px}
+
+/* Proyectos (formato vertical, como los reels) */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:22px}
+.card{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);transition:border-color .25s}
+.card:hover{border-color:var(--gold)}
+.frame{aspect-ratio:9/16;background:linear-gradient(160deg,#17140f,#050505 70%);display:grid;place-items:center;position:relative;overflow:hidden}
+.frame img.thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.play{width:54px;height:54px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;position:relative;transition:background .25s}
+.play::before{content:"";margin-left:4px;border-left:13px solid var(--gold-hi);border-top:8px solid transparent;border-bottom:8px solid transparent}
+.card:hover .play{background:rgba(183,159,134,.18)}
+.info{padding:16px 18px 20px}
+.info h3{font-weight:400;font-size:16px;line-height:1.4}
+.info p{font-size:14px;color:var(--muted);margin-top:4px;line-height:1.5}
+.tag{display:inline-block;margin-top:10px;font-size:13px;color:var(--gold)}
+
+/* Herramientas y plataformas */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.cols h3{font-weight:400;font-size:18px;margin-bottom:10px;color:var(--gold-hi)}
+.cols p{color:var(--muted)}
+.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;margin-top:34px}
+.trio h3{font-weight:400;font-size:18px;margin-bottom:10px;color:var(--gold-hi)}
+.trio p{color:var(--muted)}
+.contact-btns{display:flex;flex-wrap:wrap;gap:16px}
+.links{list-style:none;padding:0;border-top:1px solid var(--line)}
+.links li{border-bottom:1px solid var(--line)}
+.links a{display:flex;justify-content:space-between;padding:16px 4px;text-decoration:none;transition:color .2s,padding .2s}
+.links a:hover{color:var(--gold-hi);padding-left:12px}
+.links span{color:var(--muted);font-size:14px}
+
+footer{max-width:1120px;margin:88px auto 0;padding:36px 24px 48px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:14px}
+
+@media (max-width:780px){
+  nav ul{gap:16px;font-size:13px}
+  .hero-text,.cols{grid-template-columns:1fr;gap:28px}
+  section{padding-top:64px}
+}
+@media (max-width:480px){nav ul li:nth-child(n+3){display:none}}
+@media (prefers-reduced-motion:reduce){.hero img{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav aria-label="Principal">
+    <a href="#inicio" aria-label="Inicio"><img src="logo.png" alt="Logo LC" width="40" height="40"></a>
+    <ul>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proceso">Cómo trabajo</a></li>
+      <li><a href="#redes">Redes</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <img src="banner.webp" alt="Lencina Crea LC" width="1983" height="793">
+  </div>
+  <div class="hero-text">
+    <h1>Reels y videos publicitarios hechos con inteligencia artificial.</h1>
+    <div>
+      <p>Videos cortos pensados para redes: una idea clara, una imagen cuidada y un ritmo que se queda en la memoria.</p>
+      <a class="btn" href="#proyectos">Ver proyectos</a>
+    </div>
+  </div>
+
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <p class="lead">Una selección de mis videos. Tocá cualquiera para verlo en la plataforma donde lo publiqué.</p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="trio">
+      <div>
+        <h3>Reels publicitarios con IA</h3>
+        <p>Videos cortos y verticales para promocionar tu marca, producto o servicio en redes.</p>
+      </div>
+      <div>
+        <h3>Animación 3D de personajes</h3>
+        <p>Personajes y escenas animadas con estética de película animada, ideales para dar identidad a tu marca.</p>
+      </div>
+      <div>
+        <h3>Edición y montaje</h3>
+        <p>Ritmo, sonido, textos y formato listo para publicar, a partir de tu material o del que generemos juntos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proceso">
+    <h2>Cómo trabajo</h2>
+    <div class="cols" style="margin-top:34px">
+      <div>
+        <h3>Generación con IA</h3>
+        <p>Parto de la idea de la marca y genero las escenas con herramientas de inteligencia artificial, cuidando que el estilo se mantenga de principio a fin.</p>
+      </div>
+      <div>
+        <h3>Edición en CapCut Pro</h3>
+        <p>Armo el montaje, el ritmo, el sonido y los textos, y exporto en formato vertical listo para reels, historias y anuncios.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="redes">
+    <h2>Dónde ver mi trabajo</h2>
+    <p class="lead">Publico en distintas plataformas, según el proyecto.</p>
+    <ul class="links" id="redes-list"></ul>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p class="lead">¿Tenés una marca o un producto para mostrar en video? Escribime y lo charlamos.</p>
+    <div class="contact-btns">
+      <a class="btn" id="mail" href="mailto:lencinacrea@gmail.com">lencinacrea@gmail.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>Lencina Crea LC</span>
+  <span id="year"></span>
+</footer>
+
+<script>
+/* ============================================================
+   EDITÁ SOLO ESTA PARTE: reemplazá los links y textos por los tuyos.
+   Para agregar una miniatura, subí la imagen al repo y poné su nombre en "img"
+   (por ejemplo "miniaturas/reel1.jpg"). Si lo dejás vacío, se muestra el botón de play.
+   ============================================================ */
+const EMAIL = "lencinacrea@gmail.com";
+
+const PROYECTOS = [
+  { titulo: "Reel publicitario 1", desc: "Descripción corta del proyecto o la marca.", plataforma: "Instagram", url: "#", img: "" },
+  { titulo: "Reel publicitario 2", desc: "Descripción corta del proyecto o la marca.", plataforma: "YouTube",   url: "#", img: "" },
+  { titulo: "Reel publicitario 3", desc: "Descripción corta del proyecto o la marca.", plataforma: "Behance",   url: "#", img: "" },
+  { titulo: "Reel publicitario 4", desc: "Descripción corta del proyecto o la marca.", plataforma: "Facebook",  url: "#", img: "" }
+];
+
+const REDES = [
+  { nombre: "Instagram", url: "https://instagram.com/tuusuario",     nota: "Reels" },
+  { nombre: "YouTube",   url: "https://youtube.com/@tucanal",        nota: "Videos y Shorts" },
+  { nombre: "Behance",   url: "https://behance.net/tuusuario",       nota: "Casos de estudio" },
+  { nombre: "LinkedIn",  url: "https://linkedin.com/in/tuusuario",   nota: "Perfil profesional" },
+  { nombre: "Facebook",  url: "https://facebook.com/tupagina",       nota: "Página" }
+];
+/* ============================================================ */
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+document.getElementById("grid").innerHTML = PROYECTOS.map(p => `
+  <a class="card" href="${esc(p.url)}" target="_blank" rel="noopener">
+    <div class="frame">
+      ${p.img ? `<img class="thumb" src="${esc(p.img)}" alt="" loading="lazy">` : ""}
+      <span class="play" aria-hidden="true"></span>
+    </div>
+    <div class="info">
+      <h3>${esc(p.titulo)}</h3>
+      <p>${esc(p.desc)}</p>
+      <span class="tag">Ver en ${esc(p.plataforma)}</span>
+    </div>
+  </a>`).join("");
+
+document.getElementById("redes-list").innerHTML = REDES.map(r => `
+  <li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.nombre)}<span>${esc(r.nota)}</span></a></li>`).join("");
+
+const mail = document.getElementById("mail");
+mail.href = "mailto:" + EMAIL; mail.textContent = EMAIL;
+document.getElementById("year").textContent = "© " + new Date().getFullYear();
+</script>
+</body>
+</html>
