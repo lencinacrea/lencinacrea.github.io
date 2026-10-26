@@ -60,7 +60,14 @@ h2::after{content:"";display:block;width:56px;height:1px;background:var(--gold);
 .info{padding:16px 18px 20px}
 .info h3{font-weight:400;font-size:16px;line-height:1.4}
 .info p{font-size:14px;color:var(--muted);margin-top:4px;line-height:1.5}
-.tag{display:inline-block;margin-top:10px;font-size:13px;color:var(--gold)}
+.tag{display:inline-block;margin-top:10px;font-size:13px;color:var(--gold);text-decoration:none}
+a.tag:hover{text-decoration:underline}
+button.frame{border:0;padding:0;width:100%;cursor:pointer;color:inherit;font:inherit}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.card.video{cursor:default}
+.card.wide{grid-column:span 2}
+.card.wide .frame{aspect-ratio:16/9}
+@media (max-width:520px){.card.wide{grid-column:auto}}
 
 /* Herramientas y plataformas */
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
@@ -181,35 +188,62 @@ footer{max-width:1120px;margin:88px auto 0;padding:36px 24px 48px;border-top:1px
 const EMAIL = "lencinacrea@gmail.com";
 
 const PROYECTOS = [
-  { titulo: "Reel publicitario 1", desc: "Descripción corta del proyecto o la marca.", plataforma: "Instagram", url: "#", img: "" },
-  { titulo: "Reel publicitario 2", desc: "Descripción corta del proyecto o la marca.", plataforma: "YouTube",   url: "#", img: "" },
-  { titulo: "Reel publicitario 3", desc: "Descripción corta del proyecto o la marca.", plataforma: "Behance",   url: "#", img: "" },
-  { titulo: "Reel publicitario 4", desc: "Descripción corta del proyecto o la marca.", plataforma: "Facebook",  url: "#", img: "" }
+  { titulo: "Reel publicitario", desc: "Descripción corta del proyecto o la marca.", plataforma: "YouTube", url: "https://www.youtube.com/shorts/mYtUNkdb41o", img: "" },
+  { titulo: "Mármol verde", desc: "Reel publicitario con IA para una empresa de mármol, presentando uno de sus mármoles verdes.", plataforma: "YouTube", url: "https://www.youtube.com/watch?v=Ge9bXPGY0Pg", img: "" },
+  { titulo: "Automatización de ventas", desc: "Reel publicitario con IA sobre automatización de ventas.", plataforma: "YouTube", url: "https://www.youtube.com/shorts/fASb_iPV67c", img: "" },
+  { titulo: "Reforma de un patio", desc: "Reel publicitario con IA sobre la reforma de un patio.", plataforma: "YouTube", url: "https://www.youtube.com/shorts/iyDbdmxlqzY", img: "" }
+  // Si un video es horizontal (16:9), agregale  formato: "horizontal"  dentro de las llaves y se muestra más ancho.
+  // Para agregar otro video, copiá la línea de arriba (con su coma) y cambiá título, descripción y url.
+  // Si la url es de YouTube (watch, shorts o youtu.be) el video se reproduce dentro de la página.
+  // Si es de Instagram, Facebook u otra red, la tarjeta abre el link en una pestaña nueva.
 ];
 
 const REDES = [
-  { nombre: "Instagram", url: "https://instagram.com/tuusuario",     nota: "Reels" },
-  { nombre: "YouTube",   url: "https://youtube.com/@tucanal",        nota: "Videos y Shorts" },
-  { nombre: "Behance",   url: "https://behance.net/tuusuario",       nota: "Casos de estudio" },
-  { nombre: "LinkedIn",  url: "https://linkedin.com/in/tuusuario",   nota: "Perfil profesional" },
-  { nombre: "Facebook",  url: "https://facebook.com/tupagina",       nota: "Página" }
+  { nombre: "Instagram", url: "https://www.instagram.com/lencinacrea/", nota: "Reels" },
+  { nombre: "Facebook",  url: "https://www.facebook.com/LencinaCrea",   nota: "Página" },
+  { nombre: "Behance",   url: "https://www.behance.net/LencinaCrea",    nota: "Casos de estudio" },
+  { nombre: "LinkedIn",  url: "https://www.linkedin.com/in/francisco-lencina-08b682427/", nota: "Perfil profesional" }
+  // Falta YouTube: cuando tengas el link del canal, agregá acá una línea como las de arriba.
 ];
 /* ============================================================ */
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
-document.getElementById("grid").innerHTML = PROYECTOS.map(p => `
-  <a class="card" href="${esc(p.url)}" target="_blank" rel="noopener">
-    <div class="frame">
-      ${p.img ? `<img class="thumb" src="${esc(p.img)}" alt="" loading="lazy">` : ""}
-      <span class="play" aria-hidden="true"></span>
-    </div>
-    <div class="info">
-      <h3>${esc(p.titulo)}</h3>
-      <p>${esc(p.desc)}</p>
-      <span class="tag">Ver en ${esc(p.plataforma)}</span>
-    </div>
-  </a>`).join("");
+const ytId = u => { const m = String(u).match(/(?:shorts\/|v=|youtu\.be\/|embed\/)([\w-]{11})/); return m ? m[1] : null; };
+
+const info = p => `
+  <div class="info">
+    <h3>${esc(p.titulo)}</h3>
+    <p>${esc(p.desc)}</p>
+    <a class="tag" href="${esc(p.url)}" target="_blank" rel="noopener">Ver en ${esc(p.plataforma)}</a>
+  </div>`;
+
+const grid = document.getElementById("grid");
+grid.innerHTML = PROYECTOS.map(p => {
+  const id = ytId(p.url);
+  const thumb = p.img || (id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : "");
+  const img = thumb ? `<img class="thumb" src="${esc(thumb)}" alt="" loading="lazy">` : "";
+  if (id) {
+    return `<article class="card video${p.formato === "horizontal" ? " wide" : ""}">
+      <button class="frame" type="button" data-yt="${id}" data-title="${esc(p.titulo)}" aria-label="Reproducir: ${esc(p.titulo)}">${img}<span class="play" aria-hidden="true"></span></button>
+      ${info(p)}
+    </article>`;
+  }
+  return `<a class="card" href="${esc(p.url)}" target="_blank" rel="noopener">
+    <div class="frame">${img}<span class="play" aria-hidden="true"></span></div>
+    <div class="info"><h3>${esc(p.titulo)}</h3><p>${esc(p.desc)}</p><span class="tag">Ver en ${esc(p.plataforma)}</span></div>
+  </a>`;
+}).join("");
+
+/* El reproductor de YouTube se carga recién cuando alguien toca la portada */
+grid.addEventListener("click", e => {
+  const b = e.target.closest("[data-yt]");
+  if (!b) return;
+  const f = document.createElement("div");
+  f.className = "frame";
+  f.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&rel=0&playsinline=1" title="${b.dataset.title}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+  b.replaceWith(f);
+});
 
 document.getElementById("redes-list").innerHTML = REDES.map(r => `
   <li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.nombre)}<span>${esc(r.nota)}</span></a></li>`).join("");
