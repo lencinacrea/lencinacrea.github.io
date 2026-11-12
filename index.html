@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lencina Crea LC · Videos y reels publicitarios con IA</title>
+<meta name="description" content="Portfolio de Lencina Crea LC: reels y videos cortos publicitarios creados con inteligencia artificial.">
+<link rel="canonical" href="https://lencinacrea.github.io/">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#050505">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Lencina Crea LC">
+<meta property="og:title" content="Lencina Crea LC · Videos y reels publicitarios con IA">
+<meta property="og:description" content="Reels y videos publicitarios creados con inteligencia artificial, incluyendo animación 3D para marcas.">
+<meta property="og:url" content="https://lencinacrea.github.io/">
+<meta property="og:image" content="https://lencinacrea.github.io/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lencina Crea LC · Videos y reels publicitarios con IA">
+<meta name="twitter:description" content="Reels y videos publicitarios creados con inteligencia artificial, incluyendo animación 3D para marcas.">
+<meta name="twitter:image" content="https://lencinacrea.github.io/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Lencina Crea LC",
+  "url": "https://lencinacrea.github.io/",
+  "logo": "https://lencinacrea.github.io/logo.png",
+  "email": "lencinacrea@gmail.com",
+  "description": "Reels y videos publicitarios creados con inteligencia artificial, incluyendo animación 3D para marcas.",
+  "sameAs": [
+    "https://www.instagram.com/lencinacrea/",
+    "https://www.youtube.com/channel/UC8EaJ0CwurQEjGEsFY5r2sg",
+    "https://www.facebook.com/LencinaCrea",
+    "https://www.behance.net/LencinaCrea",
+    "https://www.linkedin.com/in/francisco-lencina-08b682427/"
+  ]
+}
+</script>
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050505;
+  --panel:#101010;
+  --line:#262320;
+  --text:#ece8e2;
+  --muted:#9b958c;
+  --gold:#b79f86;
+  --gold-hi:#d3bea5;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:300 17px/1.7 Montserrat,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
+img{max-width:100%;display:block}
+
+/* Navegación */
+header{position:sticky;top:0;z-index:10;background:rgba(5,5,5,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{max-width:1120px;margin:auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+nav img{width:40px;height:40px;border-radius:50%}
+nav ul{list-style:none;padding:0;display:flex;gap:28px;font-size:14px;letter-spacing:.12em}
+nav a{text-decoration:none;color:var(--muted);transition:color .2s}
+nav a:hover{color:var(--gold-hi)}
+
+/* Hero: el banner es la pieza principal */
+.hero{position:relative;overflow:hidden;background:#050505;--rx:0deg;--ry:0deg;--mx:72%;--my:48%}
+.hero .stage{animation:drift 10s ease-in-out infinite alternate}
+.hero img{width:100%;height:auto;display:block;transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry)) scale(1.05);transition:transform .3s ease-out;will-change:transform;animation:reveal 1.4s ease-out both}
+.hero .sheen{position:absolute;inset:0;pointer-events:none;mix-blend-mode:screen;background:radial-gradient(42vw circle at var(--mx) var(--my),rgba(211,190,165,.17),transparent 62%)}
+@keyframes reveal{from{opacity:0}to{opacity:1}}
+@keyframes drift{from{transform:perspective(1100px) rotateY(-1.6deg) rotateX(.7deg)}to{transform:perspective(1100px) rotateY(1.6deg) rotateX(-.7deg)}}
+.hero-text{max-width:1120px;margin:auto;padding:56px 24px 24px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end}
+h1{font-weight:200;font-size:clamp(28px,4.2vw,46px);line-height:1.2;letter-spacing:.02em}
+.hero-text p{color:var(--muted)}
+.btn{display:inline-block;margin-top:22px;padding:13px 30px;border:1px solid var(--gold);color:var(--gold-hi);text-decoration:none;font-size:14px;letter-spacing:.14em;transition:background .25s,color .25s}
+.btn:hover{background:var(--gold);color:#050505}
+
+section{max-width:1120px;margin:auto;padding:88px 24px 24px}
+h2{font-weight:200;font-size:clamp(26px,3.4vw,38px);letter-spacing:.04em;margin-bottom:12px}
+h2::after{content:"";display:block;width:56px;height:1px;background:var(--gold);margin-top:18px}
+.lead{color:var(--muted);max-width:60ch;margin:22px 0 40px}
+
+/* Proyectos (formato vertical, como los reels) */
+.grid{--gap:22px;--n:5;display:flex;flex-wrap:wrap;justify-content:center;gap:var(--gap)}
+.card{width:calc((100% - var(--gap)*(var(--n) - 1))/var(--n))}
+@media (max-width:999px){.grid{--n:3}}
+@media (max-width:699px){.grid{--n:2}}
+@media (max-width:479px){.grid{--n:1}}
+.card{display:block;text-decoration:none;background:var(--panel);border:1px solid var(--line);transition:border-color .25s}
+.card:hover{border-color:var(--gold)}
+.frame{aspect-ratio:9/16;background:linear-gradient(160deg,#17140f,#050505 70%);display:grid;place-items:center;position:relative;overflow:hidden}
+.frame img.thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.play{width:54px;height:54px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;position:relative;transition:background .25s}
+.play::before{content:"";margin-left:4px;border-left:13px solid var(--gold-hi);border-top:8px solid transparent;border-bottom:8px solid transparent}
+.card:hover .play{background:rgba(183,159,134,.18)}
+.info{padding:16px 18px 20px}
+.info h3{font-weight:400;font-size:16px;line-height:1.4}
+.info p{font-size:14px;color:var(--muted);margin-top:4px;line-height:1.5}
+.tag{display:inline-block;margin-top:10px;font-size:13px;color:var(--gold);text-decoration:none}
+a.tag:hover{text-decoration:underline}
+button.frame{border:0;padding:0;width:100%;cursor:pointer;color:inherit;font:inherit}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.card.video{cursor:default}
+.card.wide{width:calc(2*(100% - var(--gap)*(var(--n) - 1))/var(--n) + var(--gap))}
+.card.wide .frame{aspect-ratio:16/9}
+@media (max-width:479px){.card.wide{width:100%}}
+
+/* Herramientas y plataformas */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.cols h3{font-weight:400;font-size:18px;margin-bottom:10px;color:var(--gold-hi)}
+.cols p{color:var(--muted)}
+.trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;margin-top:34px}
+.trio h3{font-weight:400;font-size:18px;margin-bottom:10px;color:var(--gold-hi)}
+.trio p{color:var(--muted)}
+.contact-btns{display:flex;flex-wrap:wrap;gap:16px}
+.links{list-style:none;padding:0;border-top:1px solid var(--line)}
+.links li{border-bottom:1px solid var(--line)}
+.links a{display:flex;justify-content:space-between;padding:16px 4px;text-decoration:none;transition:color .2s,padding .2s}
+.links a:hover{color:var(--gold-hi);padding-left:12px}
+.links span{color:var(--muted);font-size:14px}
+
+footer{max-width:1120px;margin:88px auto 0;padding:36px 24px 48px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:14px}
+
+@media (max-width:780px){
+  nav ul{gap:16px;font-size:13px}
+  .hero-text,.cols{grid-template-columns:1fr;gap:28px}
+  section{padding-top:64px}
+}
+@media (max-width:480px){nav ul li:nth-child(n+3){display:none}}
+@media (prefers-reduced-motion:reduce){.hero .stage,.hero img{animation:none;transform:none}.hero .sheen{display:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav aria-label="Principal">
+    <a href="#inicio" aria-label="Inicio"><img src="logo.png" alt="Logo LC" width="40" height="40"></a>
+    <ul>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proceso">Cómo trabajo</a></li>
+      <li><a href="#redes">Redes</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="inicio">
+  <div class="hero" id="hero">
+    <div class="stage">
+      <img src="banner.webp" alt="Lencina Crea LC" width="1983" height="793">
+      <span class="sheen" aria-hidden="true"></span>
+    </div>
+  </div>
+  <div class="hero-text">
+    <h1>Reels y videos publicitarios hechos con inteligencia artificial.</h1>
+    <div>
+      <p>Videos cortos pensados para redes: una idea clara, una imagen cuidada y un ritmo que se queda en la memoria.</p>
+      <a class="btn" href="#proyectos">Ver proyectos</a>
+    </div>
+  </div>
+
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <p class="lead">Una selección de mis videos. Tocá cualquiera para verlo en la plataforma donde lo publiqué.</p>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="trio">
+      <div>
+        <h3>Reels publicitarios con IA</h3>
+        <p>Videos cortos y verticales para promocionar tu marca, producto o servicio en redes.</p>
+      </div>
+      <div>
+        <h3>Animación 3D de personajes</h3>
+        <p>Personajes y escenas animadas con estética de película animada, ideales para dar identidad a tu marca.</p>
+      </div>
+      <div>
+        <h3>Edición y montaje</h3>
+        <p>Ritmo, sonido, textos y formato listo para publicar, a partir de tu material o del que generemos juntos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="proceso">
+    <h2>Cómo trabajo</h2>
+    <div class="cols" style="margin-top:34px">
+      <div>
+        <h3>Generación con IA</h3>
+        <p>Parto de la idea de la marca y genero las escenas con herramientas de inteligencia artificial, cuidando que el estilo se mantenga de principio a fin.</p>
+      </div>
+      <div>
+        <h3>Edición en CapCut Pro</h3>
+        <p>Armo el montaje, el ritmo, el sonido y los textos, y exporto en formato vertical listo para reels, historias y anuncios.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="redes">
+    <h2>Dónde ver mi trabajo</h2>
+    <p class="lead">Publico en distintas plataformas, según el proyecto.</p>
+    <ul class="links" id="redes-list"></ul>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p class="lead">¿Tenés una marca o un producto para mostrar en video? Escribime y lo charlamos.</p>
+    <div class="contact-btns">
+      <a class="btn" id="mail" href="mailto:lencinacrea@gmail.com">lencinacrea@gmail.com</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>Lencina Crea LC</span>
+  <span id="year"></span>
+</footer>
+
+<script>
+/* ============================================================
+   EDITÁ SOLO ESTA PARTE: reemplazá los links y textos por los tuyos.
+   Para agregar una miniatura, subí la imagen al repo y poné su nombre en "img"
+   (por ejemplo "miniaturas/reel1.jpg"). Si lo dejás vacío, se muestra el botón de play.
+   ============================================================ */
+const EMAIL = "lencinacrea@gmail.com";
+
+const PROYECTOS = [
+  { titulo: "Presentación de Lencina Crea LC", desc: "Videos publicitarios creados con IA para destacar tu marca.", plataforma: "YouTube", url: "https://www.youtube.com/shorts/zs6IyOw7zP4", img: "portada-publicidad.webp" },
+  { titulo: "Animación 3D publicitaria", desc: "Video publicitario con animación 3D de estética de película animada.", plataforma: "YouTube", url: "https://www.youtube.com/shorts/mYtUNkdb41o", img: "portada-cafe.webp" },
+  { titulo: "Mármol verde", desc: "Reel publicitario con IA para una empresa de mármol, presentando uno de sus mármoles verdes.", plataforma: "YouTube", url: "https://www.youtube.com/watch?v=Ge9bXPGY0Pg", img: "portada-marmol.webp" },
+  { titulo: "Automatización de ventas", desc: "Reel publicitario con IA sobre automatización de ventas.", plataforma: "YouTube", url: "https://www.youtube.com/shorts/fASb_iPV67c", img: "portada-ventas.webp" },
+  { titulo: "Reforma de un patio", desc: "Reel publicitario con IA sobre la reforma de un patio.", plataforma: "YouTube", url: "https://www.youtube.com/shorts/iyDbdmxlqzY", img: "portada-patio.webp" }
+  // Si un video es horizontal (16:9), agregale  formato: "horizontal"  dentro de las llaves y se muestra más ancho.
+  // Para agregar otro video, copiá la línea de arriba (con su coma) y cambiá título, descripción y url.
+  // Si la url es de YouTube (watch, shorts o youtu.be) el video se reproduce dentro de la página.
+  // Si es de Instagram, Facebook u otra red, la tarjeta abre el link en una pestaña nueva.
+];
+
+const REDES = [
+  { nombre: "Instagram", url: "https://www.instagram.com/lencinacrea/", nota: "Reels" },
+  { nombre: "YouTube",   url: "https://www.youtube.com/channel/UC8EaJ0CwurQEjGEsFY5r2sg", nota: "Videos y Shorts" },
+  { nombre: "Facebook",  url: "https://www.facebook.com/LencinaCrea",   nota: "Página" },
+  { nombre: "Behance",   url: "https://www.behance.net/LencinaCrea",    nota: "Casos de estudio" },
+  { nombre: "LinkedIn",  url: "https://www.linkedin.com/in/francisco-lencina-08b682427/", nota: "Perfil profesional" }
+];
+/* ============================================================ */
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+const ytId = u => { const m = String(u).match(/(?:shorts\/|v=|youtu\.be\/|embed\/)([\w-]{11})/); return m ? m[1] : null; };
+
+const info = p => `
+  <div class="info">
+    <h3>${esc(p.titulo)}</h3>
+    <p>${esc(p.desc)}</p>
+    <a class="tag" href="${esc(p.url)}" target="_blank" rel="noopener">Ver en ${esc(p.plataforma)}</a>
+  </div>`;
+
+const grid = document.getElementById("grid");
+grid.innerHTML = PROYECTOS.map(p => {
+  const id = ytId(p.url);
+  const thumb = p.img || (id ? `https://i.ytimg.com/vi/${id}/hqdefault.jpg` : "");
+  const img = thumb ? `<img class="thumb" src="${esc(thumb)}" alt="" loading="lazy">` : "";
+  if (id) {
+    return `<article class="card video${p.formato === "horizontal" ? " wide" : ""}">
+      <button class="frame" type="button" data-yt="${id}" data-title="${esc(p.titulo)}" aria-label="Reproducir: ${esc(p.titulo)}">${img}<span class="play" aria-hidden="true"></span></button>
+      ${info(p)}
+    </article>`;
+  }
+  return `<a class="card" href="${esc(p.url)}" target="_blank" rel="noopener">
+    <div class="frame">${img}<span class="play" aria-hidden="true"></span></div>
+    <div class="info"><h3>${esc(p.titulo)}</h3><p>${esc(p.desc)}</p><span class="tag">Ver en ${esc(p.plataforma)}</span></div>
+  </a>`;
+}).join("");
+
+/* El reproductor de YouTube se carga recién cuando alguien toca la portada */
+grid.addEventListener("click", e => {
+  const b = e.target.closest("[data-yt]");
+  if (!b) return;
+  const f = document.createElement("div");
+  f.className = "frame";
+  f.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${b.dataset.yt}?autoplay=1&rel=0&playsinline=1" title="${b.dataset.title}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+  b.replaceWith(f);
+});
+
+document.getElementById("redes-list").innerHTML = REDES.map(r => `
+  <li><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.nombre)}<span>${esc(r.nota)}</span></a></li>`).join("");
+
+const mail = document.getElementById("mail");
+mail.href = "mailto:" + EMAIL; mail.textContent = EMAIL;
+/* Efecto de profundidad del banner: se inclina siguiendo el mouse o el dedo */
+(function () {
+  const hero = document.getElementById("hero");
+  if (!hero || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  hero.addEventListener("pointermove", e => {
+    const r = hero.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+    hero.style.setProperty("--ry", ((x - .5) * 7).toFixed(2) + "deg");
+    hero.style.setProperty("--rx", ((.5 - y) * 4).toFixed(2) + "deg");
+    hero.style.setProperty("--mx", (x * 100).toFixed(1) + "%");
+    hero.style.setProperty("--my", (y * 100).toFixed(1) + "%");
+  });
+  hero.addEventListener("pointerleave", () => {
+    hero.style.setProperty("--rx", "0deg"); hero.style.setProperty("--ry", "0deg");
+    hero.style.setProperty("--mx", "72%"); hero.style.setProperty("--my", "48%");
+  });
+})();
+
+document.getElementById("year").textContent = "© " + new Date().getFullYear();
+</script>
+</body>
+</html>
